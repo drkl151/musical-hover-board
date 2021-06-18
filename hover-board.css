@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  transition: background 2.5s ease-in-out;
+  animation: background-animation 13s alternate infinite;
+  font-family: 'Neucha', cursive;
+}
+
+@keyframes background-animation {
+  0% {
+    background-size: 120%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 730px;
+  margin-left: 50px;
+}
+
+.square {
+  width: 25px;
+  height: 25px;
+  background-color: rgb(65, 65, 65);
+  margin: 2px;
+  box-shadow: 0 0 2px black;
+  transition: 3.5s;
+}
+
+.square:hover {
+  transition-duration: 0s;
+}
+
+.wrapper-playlist {
+  position: relative;
+  width: 440px;
+  height: 740px;
+  margin-right: 60px;
+}
+
+
+#icon-playlist-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30%;
+  width: 65px;
+  height: 65px;
+  background-color: rgba(228, 211, 211, 0.493);
+}
+
+.text-playlist {
+  font-size: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+#icon-playlist {
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.playlist-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.playlist {
+  width: 85%;
+  height: 80%;
+  margin-top: 15px;
+  padding: 30px;
+  background-color: rgba(78, 83, 83, 0.63);
+  display: none;
+  box-shadow: 2px 3px 4px rgb(0, 0, 0), -2px -3px 3px rgba(0, 0, 0, 0.644);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.img-title-playlist {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0;
+  box-shadow: 0 0 2px black;
+}
+
+.audio-title {
+  width: max-content;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
+  margin: 14px auto;
+  position: relative;
+}
+
+.audio-title:hover {
+  background-color: rgba(221, 210, 197, 0.24);
+}
+
+.audio-title.active::before {
+ position: absolute;
+  background-image: url(./playlist/img-playlist/selected-sound.svg);
+  background-size: cover;
+  width: 30px;
+  content: " ";
+  height: 30px;
+  left: -45px;
+}
