@@ -2,36 +2,36 @@ const board = document.querySelector('#board');
 const SQUEARES_NUMBER = 425;
 const colors = ['#06d1b9', '#79d106', '#ff9924', '#0ad100',
   '#ff70b8', '#7aedff', '#ff3d51', '##cc56c2', '#f51616', '#00ff88', '#db16f5', '#8aff70'];
-const body = document.querySelector('body');
+const wrapper = document.querySelector('.wrapper');
 const backgroundImages = [
   {
     pathImage: 'background-hover-board.jpeg',
-    possionX: -10,
-    possionY: -100,
+    possionX: 0,
+    possionY: 0,
   },
 
   {
     pathImage: 'background-hover-board-2.jpeg',
     possionX: -10,
-    possionY: -180,
+    possionY: 0,
   },
 
   {
     pathImage: 'background-hover-board-3.jpg',
     possionX: 0,
-    possionY: -100,
+    possionY: 0,
   },
 
   {
     pathImage: 'background-hover-board-4.jpg',
-    possionX: -20,
-    possionY: -20,
+    possionX: 0,
+    possionY: 0,
   },
 ];
 
 let currentIndexImage = 0;
-body.style.backgroundImage = `url(./img-background/${backgroundImages[0].pathImage})`
-body.style.backgroundPosition = `${backgroundImages[0].possionX}px ${backgroundImages[0].possionY}px`
+wrapper.style.backgroundImage = `url(./img-background/${backgroundImages[0].pathImage})`
+wrapper.style.backgroundPosition = `${backgroundImages[0].possionX}px ${backgroundImages[0].possionY}px`
 
 for (let i = 0; i < SQUEARES_NUMBER; i++) {
   const square = document.createElement('div');
@@ -92,10 +92,10 @@ function changeMusic() {
   backgroundAudio.forEach((audio) => {
     let newAudio = document.createElement('p')
     newAudio.innerHTML = audio.title;
-    newAudio.classList.add('audio-title');
+    newAudio.classList.add('playlist__audio-title');
     playlistBlock.append(newAudio);
     newAudio.addEventListener('click', () => {
-      const allAudioText = document.querySelectorAll('.audio-title');
+      const allAudioText = document.querySelectorAll('.playlist__audio-title');
 
       allAudioText.forEach((text) => {
         text.classList.remove('active');
@@ -140,7 +140,7 @@ setInterval(() => {
     currentIndexImage = 0;
   }
 
-  body.style.backgroundImage = `url(./img-background/${backgroundImages[currentIndexImage].pathImage})`;
-  body.style.backgroundPosition = `${backgroundImages[currentIndexImage].possionX}px
+  wrapper.style.backgroundImage = `url(./img-background/${backgroundImages[currentIndexImage].pathImage})`;
+  wrapper.style.backgroundPosition = `${backgroundImages[currentIndexImage].possionX}px
    ${backgroundImages[currentIndexImage].possionY}px`
 }, 8000);

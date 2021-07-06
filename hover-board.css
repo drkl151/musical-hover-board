@@ -3,16 +3,23 @@
 }
 
 body {
-  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  font-family: "Neucha", cursive;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
   overflow: hidden;
   margin: 0;
-  transition: background 2.5s ease-in-out;
+  background-repeat: no-repeat;
+
   animation: background-animation 13s alternate infinite;
-  font-family: 'Neucha', cursive;
+  transition: background 4.5s ease-in-out;
 }
 
 @keyframes background-animation {
@@ -24,7 +31,7 @@ body {
   }
 }
 
-.container {
+.container-for-squares {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,10 +56,9 @@ body {
 .wrapper-playlist {
   position: relative;
   width: 440px;
-  height: 740px;
+  height: 620px;
   margin-right: 60px;
 }
-
 
 #icon-playlist-block {
   display: flex;
@@ -86,8 +92,7 @@ body {
 }
 
 .playlist {
-  width: 85%;
-  height: 80%;
+  width: 77%;
   margin-top: 15px;
   padding: 30px;
   background-color: rgba(78, 83, 83, 0.63);
@@ -95,15 +100,15 @@ body {
   box-shadow: 2px 3px 4px rgb(0, 0, 0), -2px -3px 3px rgba(0, 0, 0, 0.644);
 }
 
-.title {
+.playlist__title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 21px;
 }
 
-.img-title-playlist {
+.playlist__img-title {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -111,7 +116,7 @@ body {
   box-shadow: 0 0 2px black;
 }
 
-.audio-title {
+.playlist__audio-title {
   width: max-content;
   font-size: 24px;
   cursor: pointer;
@@ -120,16 +125,22 @@ body {
   position: relative;
 }
 
-.audio-title:hover {
+.playlist__audio-title:hover {
   background-color: rgba(221, 210, 197, 0.24);
 }
 
-.audio-title.active::before {
- position: absolute;
-  background-image: url(./playlist/img-playlist/selected-sound.svg);
-  background-size: cover;
-  width: 30px;
+.playlist__audio-title.active::before {
   content: " ";
-  height: 30px;
-  left: -45px;
+  position: absolute;
+  background-image: url(./playlist/img-playlist/selected-sound.png);
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  left: -35px;
+}
+
+@media all and (max-width: 1350px) {
+  .container-for-squares{
+    max-width: 515px;
+  }
 }
